@@ -7,25 +7,17 @@ public class Main {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        double A, B, C, triangulo, trapezio, retangulo, circulo, quadrado;
+        int horas;
+        horas = sc.nextInt();
 
-        A = sc.nextDouble();
-        B = sc.nextDouble();
-        C = sc.nextDouble();
+        if (horas < 12) {
+            System.out.println("Bom dia");
+        } else if (horas < 18) {
+            System.out.println("Boa tarde");
 
-        triangulo = A * C / 2;
-        trapezio = (A + B) * C / 2;
-        retangulo = A * B;
-        circulo = (Math.pow(C,2)) * 3.14159;
-        quadrado = B*B;
-
-        System.out.printf("AREA DO TRIANGULO = %.3f%n", triangulo);
-        System.out.printf("AREA DO CIRCULO = %.3f%n", circulo);
-        System.out.printf("AREA DO TRAPEZIO = %.3f%n", trapezio);
-        System.out.printf("AREA DO QUADRADO = %.3f%n", quadrado);
-        System.out.printf("AREA DO RETANGULO = %.3f%n", retangulo);
-
-
+        } else {
+            System.out.println("Boa noite");
+        }
         sc.close();
     }
 }
