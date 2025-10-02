@@ -7,17 +7,19 @@ public class Main {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        int horas;
-        horas = sc.nextInt();
+        int inicio, fim, duracao;
 
-        if (horas < 12) {
-            System.out.println("Bom dia");
-        } else if (horas < 18) {
-            System.out.println("Boa tarde");
+        inicio = sc.nextInt();
+        fim = sc.nextInt();
 
-        } else {
-            System.out.println("Boa noite");
+        if (inicio < fim){
+            duracao = fim - inicio;
         }
+        else {
+            duracao = 24 - inicio + fim;
+        }
+        System.out.println("O JOGO DUROU "+duracao+" HORAS");
+
         sc.close();
     }
 }
