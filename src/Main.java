@@ -7,19 +7,30 @@ public class Main {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        int inicio, fim, duracao;
+        double salary, amount;
+        salary = sc.nextDouble();
 
-        inicio = sc.nextInt();
-        fim = sc.nextInt();
-
-        if (inicio < fim){
-            duracao = fim - inicio;
+        if(salary <= 2000.00){
+            System.out.println("ISENTO");
         }
+
+        else if (salary <= 3000.00){
+            salary -= 2000;
+            amount = salary * 0.08;
+            System.out.printf("R$%.2f",amount);
+        }
+
+        else if (salary <= 4500.00){
+            salary -= 3000;
+            amount = (salary * 0.18) + (1000 * 0.08);
+            System.out.printf("R$%.2f",amount);
+        }
+
         else {
-            duracao = 24 - inicio + fim;
+            salary -= 4500;
+            amount = (salary * 0.28) + (1000 * 0.08) + (1500 * 0.18);
+            System.out.printf("R$%.2f",amount);
         }
-        System.out.println("O JOGO DUROU "+duracao+" HORAS");
-
         sc.close();
     }
 }
