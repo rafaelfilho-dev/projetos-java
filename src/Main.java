@@ -4,31 +4,14 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        Locale.setDefault((Locale.US));
         Scanner sc = new Scanner(System.in);
 
-        int alcool = 0;
-        int gasolina = 0;
-        int diesel = 0;
+        int N = sc.nextInt();
 
-        int x = sc.nextInt();
-
-        while (x != 4) {
-            if (x == 1) {
-                alcool += 1;
-            }
-            else if (x == 2) {
-                gasolina += 1;
-            }
-            else if (x == 3) {
-                diesel += 1;
-            }
-
-            x = sc.nextInt();
+        for (int a = 1; a <= N; a++){
+            System.out.println(a + " " + Math.pow(a, 2) + " " + Math.pow(a,3));
         }
-        System.out.println("MUITO OBRIGADO");
-        System.out.println("Álcool: "+ alcool);
-        System.out.println("Gasolina: "+ gasolina);
-        System.out.println("Diesel: "+ diesel);
 
         sc.close();
     }
