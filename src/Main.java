@@ -4,33 +4,32 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        double salary, amount;
-        salary = sc.nextDouble();
+        int alcool = 0;
+        int gasolina = 0;
+        int diesel = 0;
 
-        if(salary <= 2000.00){
-            System.out.println("ISENTO");
-        }
+        int x = sc.nextInt();
 
-        else if (salary <= 3000.00){
-            salary -= 2000;
-            amount = salary * 0.08;
-            System.out.printf("R$%.2f",amount);
-        }
+        while (x != 4) {
+            if (x == 1) {
+                alcool += 1;
+            }
+            else if (x == 2) {
+                gasolina += 1;
+            }
+            else if (x == 3) {
+                diesel += 1;
+            }
 
-        else if (salary <= 4500.00){
-            salary -= 3000;
-            amount = (salary * 0.18) + (1000 * 0.08);
-            System.out.printf("R$%.2f",amount);
+            x = sc.nextInt();
         }
+        System.out.println("MUITO OBRIGADO");
+        System.out.println("Álcool: "+ alcool);
+        System.out.println("Gasolina: "+ gasolina);
+        System.out.println("Diesel: "+ diesel);
 
-        else {
-            salary -= 4500;
-            amount = (salary * 0.28) + (1000 * 0.08) + (1500 * 0.18);
-            System.out.printf("R$%.2f",amount);
-        }
         sc.close();
     }
 }
